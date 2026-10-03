@@ -1,0 +1,83 @@
+{
+    "name": "dotswan/eagle-eye-filament",
+    "description": "Filament 5 admin UI for dotswan/eagle-eye: activity explorer, trace timeline, overview dashboard and audit history, read through the driver-agnostic repository.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "filament",
+        "filament-plugin",
+        "filament-v5",
+        "activity-log",
+        "audit",
+        "observability",
+        "dotswan",
+        "eagle-eye"
+    ],
+    "homepage": "https://github.com/dotswan/eagle-eye-filament",
+    "support": {
+        "issues": "https://github.com/dotswan/eagle-eye-filament/issues",
+        "source": "https://github.com/dotswan/eagle-eye-filament"
+    },
+    "authors": [
+        {
+            "name": "Dotswan",
+            "email": "tech@dotswan.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "dotswan/eagle-eye": "^1.0",
+        "filament/filament": "^5.0",
+        "illuminate/support": "^11.0 || ^12.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^9.0 || ^10.0",
+        "pestphp/pest": "^3.0",
+        "phpstan/phpstan": "^2.0",
+        "rector/rector": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dotswan\\EagleEyeFilament\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dotswan\\EagleEyeFilament\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dotswan\\EagleEyeFilament\\EagleEyeFilamentServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "check": [
+            "@rector:dry",
+            "@lint",
+            "@analyse",
+            "@test"
+        ],
+        "format": "pint --dirty",
+        "lint": "pint --test",
+        "rector": "rector process",
+        "rector:dry": "rector process --dry-run",
+        "test": "pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
