@@ -5,19 +5,9 @@ All notable changes to `dotswan/eagle-eye-filament` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 1.0.0-beta.1 - 2026-10-13
 
-### Added
-
-- Laravel 13 support. The `illuminate/support` constraint now allows `^13.0`, and CI covers Laravel 12 and 13.
-
-### Removed
-
-- Laravel 11 support. The `illuminate/support` constraint, the dev dependencies and the CI matrix now require Laravel 12 or newer.
-
-## 1.0.0 - 2026-10-03
-
-Initial public release.
+Initial public beta for Filament 5. Supports Laravel 12 and 13; Laravel 11 is no longer supported.
 
 ### Added
 
