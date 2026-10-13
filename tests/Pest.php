@@ -112,7 +112,7 @@ function fakeSupportedCapabilities(array $supported): void
     }
 
     $manager = app(DriverManager::class);
-    $manager->extend('memory', static fn (): CapabilityFakingDriver => new CapabilityFakingDriver($real, $supported));
+    $manager->extend('memory', fn (): CapabilityFakingDriver => new CapabilityFakingDriver($real, $supported));
     $manager->forgetDrivers();
     app()->forgetInstance(ActivityRepositoryInterface::class);
 }

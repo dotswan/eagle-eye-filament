@@ -274,7 +274,7 @@ final class UserActivityPage extends Page
 
             $firstBucket = $series['buckets'][$day * self::HEATMAP_HOURS] ?? null;
             $rows[] = [
-                'label' => null !== $firstBucket ? $firstBucket->format('D d') : '',
+                'label' => $firstBucket?->format('D d') ?? '',
                 'cells' => $cells,
             ];
         }

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Laravel 13 support. The `illuminate/support` constraint now allows `^13.0`, and CI covers Laravel 12 and 13.
+
+### Removed
+
+- Laravel 11 support. The `illuminate/support` constraint, the dev dependencies and the CI matrix now require Laravel 12 or newer.
+
 ## 1.0.0 - 2026-10-03
 
 Initial public release.

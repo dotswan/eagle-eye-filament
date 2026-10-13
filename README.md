@@ -24,7 +24,7 @@ The plugin adds an activity overview dashboard, an activity explorer, event deta
 | Dependency | Version |
 |---|---|
 | PHP | 8.4 or newer |
-| Laravel | 11 (11.28+) or 12 |
+| Laravel | 12 or 13 |
 | Filament | 5.x |
 | [`dotswan/eagle-eye`](https://github.com/dotswan/eagle-eye) | ^1.0 |
 

@@ -8,6 +8,7 @@ use Dotswan\EagleEye\Enums\ActivitySeverity;
 use Dotswan\EagleEyeFilament\Support\Explorer\ActivityFilterState;
 use Dotswan\EagleEyeFilament\Support\Explorer\InvalidActivityFilter;
 use Dotswan\EagleEyeFilament\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
@@ -57,14 +58,14 @@ it('keeps actor and subject types when no id is supplied', function (): void {
 it('rejects unknown channel and severity values with the offending field', function (): void {
     try {
         ActivityFilterState::fromInput(['channels' => ['nope']]);
-        $this->fail('Expected an invalid channel filter.');
+        Assert::fail('Expected an invalid channel filter.');
     } catch (InvalidActivityFilter $exception) {
         expect($exception->field)->toBe('channels');
     }
 
     try {
         ActivityFilterState::fromInput(['severities' => ['nope']]);
-        $this->fail('Expected an invalid severity filter.');
+        Assert::fail('Expected an invalid severity filter.');
     } catch (InvalidActivityFilter $exception) {
         expect($exception->field)->toBe('severities');
     }
